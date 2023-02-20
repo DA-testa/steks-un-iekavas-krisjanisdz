@@ -9,7 +9,6 @@ Bracket = namedtuple("Bracket", ["char", "position"])
 def are_matching(left, right):
     return (left + right) in ["()", "[]", "{}"]
 
-
 def find_mismatch(text):
     opening_brackets_stack = []
     d = 0
@@ -23,7 +22,7 @@ def find_mismatch(text):
             if not opening_brackets_stack or not are_matching(opening_brackets_stack[-1].char, next):
                 return d+1
             opening_brackets_stack.pop()
-
+            
         d = d + 1
         
 def main():
